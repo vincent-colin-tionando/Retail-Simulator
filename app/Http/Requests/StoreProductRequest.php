@@ -40,6 +40,10 @@ class StoreProductRequest extends FormRequest
     public function withValidator(\Illuminate\Validation\Validator $validator): void
     {
         $validator->after(function ($v) {
+            if ($v->errors()->has('price_consumer') || $v->errors()->has('price_distributor')) {
+                return;
+            }
+            
             $priceConsumer    = (float) $this->input('price_consumer', 0);
             $priceDistributor = (float) $this->input('price_distributor', 0);
 
