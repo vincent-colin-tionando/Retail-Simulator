@@ -80,9 +80,9 @@
                     <div class="row g-3">
                         <div class="col-md-6">
                             <label class="form-label">Harga Consumer <span class="text-danger">*</span></label>
-                            <div class="input-group">
+                            <div class="input-group has-validation">
                                 <span class="input-group-text">Rp</span>
-                                <input type="number" name="price_consumer" min="1" step="100"
+                                <input type="number" name="price_consumer" min="1" step="any"
                                     class="form-control @error('price_consumer') is-invalid @enderror"
                                     value="{{ old('price_consumer') }}" placeholder="5000">
                                 @error('price_consumer')
@@ -93,9 +93,9 @@
                         </div>
                         <div class="col-md-6">
                             <label class="form-label">Harga Distributor <span class="text-danger">*</span></label>
-                            <div class="input-group">
+                            <div class="input-group has-validation">
                                 <span class="input-group-text">Rp</span>
-                                <input type="number" name="price_distributor" min="1" step="100"
+                                <input type="number" name="price_distributor" min="1" step="any"
                                     class="form-control @error('price_distributor') is-invalid @enderror"
                                     value="{{ old('price_distributor') }}" placeholder="3800">
                                 @error('price_distributor')
