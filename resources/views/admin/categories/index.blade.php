@@ -84,7 +84,7 @@
                             @endif
                         </td>
                         <td class="text-center">
-                            <span class="badge bg-light text-dark">{{ $parent->products_count }}</span>
+                            <span class="badge bg-light text-dark">{{ $parent->products_count + $parent->children->sum('products_count') }}</span>
                         </td>
                         <td class="text-center text-muted">{{ $parent->sort_order }}</td>
                         <td class="text-center">
