@@ -73,10 +73,9 @@
     <div class="alert alert-info d-flex align-items-center gap-3 mb-4">
         <i class="bi bi-info-circle-fill fs-4 flex-shrink-0"></i>
         <div>
-            <strong>Harga tersembunyi.</strong>
             <a href="{{ route('login') }}" class="alert-link">Login</a> atau
             <a href="{{ route('register') }}" class="alert-link">daftar akun</a>
-            untuk melihat harga dan menambahkan produk ke keranjang.
+            untuk berbelanja.
         </div>
     </div>
 @endguest
