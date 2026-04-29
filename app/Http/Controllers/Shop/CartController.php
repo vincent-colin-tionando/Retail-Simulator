@@ -123,6 +123,21 @@ class CartController extends Controller
         $cart = $this->getCart();
         $key  = (string) $productId;
 
+        // Pastikan item memang ada di cart
+        if (!isset($cart[$key])) {
+            return back()->with('error', 'Item tidak ditemukan di keranjang.');
+        }
+
+        // Jika quantity = 0 -> hapus item
+        if ($request->quantity == 0) {
+            $name = $cart[$key]['name'];
+
+            unset($cart[$key]);
+            $this->saveCart($cart);
+
+            return back->with('success', "\"{$name}"\"dihapus dari keranjang.");
+        }
+        
         // Cek stok terbaru dari DB agar tidak over-order
         $product = Product::find($productId);
         if ($product && $request->quantity > $product->stock) {
