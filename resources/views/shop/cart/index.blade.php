@@ -260,7 +260,7 @@
         if (!input) return;
 
         const current = parseInt(input.value, 10) || 1;
-        const next    = Math.max(1, current + delta);
+        const next    = Math.max(0, current + delta);
 
         if (next !== current) {
             input.value = next;
